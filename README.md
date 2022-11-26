@@ -10,7 +10,7 @@
 
   1. Install [vscode](https://code.visualstudio.com/), and install platformio plugin in the vscode extension.
   2. Download this firmware and unzip it, you will get a firmware folder. Run vscode -> file -> Open Folder, select the firmware folder, open it.
-  3. Try compiling, and the compiler will automatically download relevant dependent libraries
+  3. Try compiling, and the compiler will automatically download relevant dependent libraries. If an error occurs, please refer to the FAQ for solutions.
   4. Open file: .platformio\packages\framework-arduinoststm32\system\Middlewares\ST\STM32_USB_Host_Library\Core\Src\usbh_core.c
   - Find function USBH_ StatusTypeDef USBH_ Init(...)
   - Add a statement below the statement 'USBH_LL_Init(phost);' : 'USBH_LL_Disconnect(phost);'
