@@ -8,17 +8,18 @@
 
 ## How to compile
 
-  1. Install [vscode](https://code.visualstudio.com/), and install platformio plugin in the vscode extension.
-  2. Download this firmware and unzip it, you will get a firmware folder. Run vscode -> file -> Open Folder, select the firmware folder, open it.
-  3. Try compiling, and the compiler will automatically download relevant dependent libraries. If an error occurs, please refer to the FAQ for solutions.
-  4. Open file: .platformio\packages\framework-arduinoststm32\system\Middlewares\ST\STM32_USB_Host_Library\Core\Src\usbh_core.c
+  1. Warning: current source code supports bootloader version 1.58 and above, when you restart the machine, the upper left corner of screen should display the bootloader version, if it doesn't display or the version is lower than 1.58, you can't use this firmware.
+  2. Install [vscode](https://code.visualstudio.com/), and install platformio plugin in the vscode extension.
+  3. Download this firmware and unzip it, you will get a firmware folder. Run vscode -> file -> Open Folder, select the firmware folder, open it.
+  4. Try compiling, and the compiler will automatically download relevant dependent libraries. If an error occurs, please refer to the FAQ for solutions.
+  5. Open file: .platformio\packages\framework-arduinoststm32\system\Middlewares\ST\STM32_USB_Host_Library\Core\Src\usbh_core.c
   - Find function USBH_ StatusTypeDef USBH_ Init(...)
   - Add a statement below the statement 'USBH_LL_Init(phost);' : 'USBH_LL_Disconnect(phost);'
 <img align="center" width=372 src="buildroot/share/pixmaps/tronxy/usb_core_modify.png" />
 
-  5. Compile the firmware. The first compilation may take a long time. The compiled target file is placed in the 'update' folder
+  6. Compile the firmware. The first compilation may take a long time. The compiled target file is placed in the 'update' folder
 
-  6. Copy the 'update' folder into the root directory of the SD card, insert the card into the printer, restart, and the machine will automatically update the firmware. After that, the machine will run the current firmware.
+  7. Copy the 'update' folder into the root directory of the SD card, insert the card into the printer, restart, and the machine will automatically update the firmware. After that, the machine will run the current firmware.
 
 ## FAQ
 
