@@ -72,8 +72,4 @@
 <img align="center" width=685 src="buildroot/share/pixmaps/tronxy/comment_exti.png" />
 
 
-## Other
-
-The latest version can be found at [Marlin on github](https://github.com/MarlinFirmware)
-
 
